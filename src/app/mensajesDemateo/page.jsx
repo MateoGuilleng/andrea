@@ -16,7 +16,7 @@ export default function MensajesDeMateo() {
     fetchMessages();
   }, []);
 
-  // lol
+  // loll
   const formatDate = (dateString) => {
     const options = {
       year: "numeric",
