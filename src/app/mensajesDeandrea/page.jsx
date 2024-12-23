@@ -71,7 +71,7 @@ export default function MensajesDeAndrea() {
           >
             Volver
           </button>
-          <h1 className="text-5xl font-cursive self-center text-pink-600">
+          <h1 className="sm:text-5xl text-xl font-cursive self-center text-pink-600">
             Mensajes de Andrea 💌
           </h1>
         </div>
