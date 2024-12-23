@@ -120,7 +120,7 @@ export default function Home() {
 
   return (
     <div className="relative w-full justify-center overflow-hidden min-h-screen bg-white-purple dark:bg-dark-purple font-[family-name:var(--font-geist-sans)] p-8 sm:p-20">
-      <ThemeToggleButton className="z-30"/>
+      <ThemeToggleButton className="z-30" />
       {/* Stickers en los bordes */}
       <div className="absolute top-0 left-0 sm:top-4 sm:left-4 w-full h-full z-10">
         {/* Sticker superior izquierdo */}
@@ -293,16 +293,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Controles */}
-          <div className="absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2 px-4">
+          {/* Controles con tamaño y estilo mejorados */}
+          <div className="mt-10 flex justify-between  px-4">
+            {/* Botón de anterior */}
             <button
-              className="bg-pastel-purple text-white p-2 rounded-full shadow-lg hover:bg-pastel-pink"
+              className="text-text-blaack dark:text-text-whitee bg-white dark:bg-black p-8 rounded-full shadow-lg"
               onClick={handleCarruselPrev}
             >
               ❮
             </button>
+            {/* Botón de siguiente */}
             <button
-              className="bg-pastel-purple text-white p-2 rounded-full shadow-lg hover:bg-pastel-pink"
+              className="text-text-blaack dark:text-text-whitee bg-white dark:bg-black p-8 rounded-full shadow-lg"
               onClick={handleCarruselNext}
             >
               ❯
