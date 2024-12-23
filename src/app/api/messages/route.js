@@ -11,6 +11,6 @@ export async function GET() {
     
     return NextResponse.json(messages); // Devuelve los mensajes como respuesta JSON
   } catch (error) {
-    return NextResponse.error(); // Si hay un error, devuelve un error
+    return NextResponse.error(); // Si hay un error, devuelve un errorr
   }
 }
