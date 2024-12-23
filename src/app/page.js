@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import ThemeToggleButton from "@/components/ThemeToggleButton";
 import TimeCapsule from "@/components/TimeCapsule";
 
 export default function Home() {
@@ -86,7 +87,7 @@ export default function Home() {
         },
         body: JSON.stringify({ message }),
       });
-  
+
       if (response.ok) {
         console.log("Mensaje enviado correctamente");
       } else {
@@ -96,7 +97,6 @@ export default function Home() {
       console.error("Error en la solicitud:", error);
     }
   };
-  
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % content.length);
@@ -119,30 +119,85 @@ export default function Home() {
   const currentContent = content[currentIndex];
 
   return (
-    <div className="relative w-full justify-center overflow-hidden min-h-screen bg-pastel-pink font-[family-name:var(--font-geist-sans)] p-8 sm:p-20">
+    <div className="relative w-full justify-center overflow-hidden min-h-screen bg-white-purple dark:bg-dark-purple font-[family-name:var(--font-geist-sans)] p-8 sm:p-20">
+      <ThemeToggleButton className="z-30"/>
+      {/* Stickers en los bordes */}
+      <div className="absolute top-0 left-0 sm:top-4 sm:left-4 w-full h-full z-10">
+        {/* Sticker superior izquierdo */}
+        <div className="absolute top-0 left-0">
+          <img
+            src="/got7.png"
+            alt="Sticker"
+            className="-rotate-12 w-20 sm:w-44"
+          />
+        </div>
+
+        {/* Sticker superior derecho */}
+        <div className="absolute top-0 -right-8 sm:top-4 sm:right-4">
+          <img
+            src="/exo.png"
+            alt="Sticker"
+            className="rotate-12 w-32 sm:w-72"
+          />
+        </div>
+
+        {/* Stickers en los bordes */}
+        <div className="absolute bottom-96 right-4">
+          <img
+            src="/blue.jpeg"
+            alt="Sticker"
+            className="rotate-45 w-16 sm:w-32"
+          />
+        </div>
+
+        <div className="absolute top-1/4 left-4 -z-10">
+          <img
+            src="/glory.jpeg"
+            alt="Sticker"
+            className="-rotate-45 w-16 sm:w-32"
+          />
+        </div>
+
+        <div className="absolute bottom-1/2 -right-2">
+          <img
+            src="/black.png"
+            alt="Sticker"
+            className="-rotate-12 w-16 sm:w-32"
+          />
+        </div>
+
+        <div className="absolute bottom-1/2 -left-4">
+          <img
+            src="/vicente.png"
+            alt="Sticker"
+            className="rotate-12 w-16 sm:w-32"
+          />
+        </div>
+      </div>
+
       {/* Corazones en efecto parallax con grid */}
-      <div className="absolute ml-2 inset-0 grid grid-cols-6 grid-rows-6 ">
-        {Array.from({ length: 36 }).map((_, index) => (
+      <div className="absolute ml-2 inset-0 grid grid-cols-16 grid-rows-16 gap-5">
+        {Array.from({ length: 256 }).map((_, index) => (
           <div
             key={index}
             className={`animate-float ${
               index % 3 === 0
-                ? "bg-heart w-10 h-10"
+                ? "bg-heart w-16 h-16"
                 : index % 3 === 1
-                ? "bg-heart2 w-14 h-14"
-                : "bg-heart3 w-12 h-12"
+                ? "bg-heart2 w-18 h-18"
+                : "bg-heart3 w-20 h-20"
             } bg-no-repeat`}
             style={{
               animationDelay: `${(index % 5) * 0.5}s`,
-              gridColumn: (index % 6) + 1,
-              gridRow: Math.floor(index / 6) + 1,
+              gridColumn: (index % 16) + 1,
+              gridRow: Math.floor(index / 16) + 1,
             }}
           ></div>
         ))}
       </div>
 
       <main className="flex flex-col w-full gap-8 row-start-2 items-center sm:items-start">
-        <div className="card w-full text-center relative">
+        <div className="card w-full bg-card-white-purple dark:bg-card-dark-purple text-center relative">
           {/* Flores en las esquinas */}
           <div className="flower flower-top-left">
             <img src="/flor.png" alt="Flores" />
@@ -152,20 +207,20 @@ export default function Home() {
             <img src="/flor.png" alt="Flores" />
           </div>
 
-          <p className="text-lg font-semibold text-pastel-blue drop-shadow-md w-full">
+          <p className="text-lg font-semibold text-text-blaack dark:text-text-whitee drop-shadow-md w-full">
             Un pequeño espacio solo para ti
           </p>
-          <p className="mt-4 text-sm text-pastel-purple drop-shadow-md text-center text-wrap">
+          <p className="mt-4 text-sm text-text-blaack dark:text-text-whitee  drop-shadow-md text-center text-wrap">
             Espero que cuando veas esto estés bien. <br />
             Hice esto porque te amo muuuucho :3, <br /> y también porque tenía
             mucho tiempo libre jsjsj.
           </p>
           <div className="mt-6 flex justify-center flex-col">
-            <span className="bg-pastel-purple/30 px-4 py-2 rounded-full text-pastel-blue text-sm">
+            <span className="bg-pastel-purple/30 px-4 py-2 rounded-full text-text-blaack dark:text-text-whitee text-sm">
               Para la razon de mi sonrisa: Andrea Ferro
             </span>
 
-            <span className="bg-pastel-purple/30 px-4 py-2 rounded-full text-pastel-blue font-bold text-sm">
+            <span className="bg-pastel-purple/30 px-4 py-2 rounded-full text-text-blaack dark:text-text-whitee font-bold text-sm">
               💕 Nunca te olvides de ser feliz 💕
             </span>
           </div>
@@ -185,7 +240,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="card w-full text-center relative">
+          <div className="card w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
             <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
               {currentContent.text}
             </p>
@@ -198,13 +253,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="z-10">
-          <div className="card mb-5 w-full text-center relative">
+        <div className="z-10 ">
+          <div className="card mb-5 w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
             <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
-              Nos conocemos desde hace mucho, han habido errores, meses que
+              Nos conocemos desde hace mucho, hemos cometido errores, meses que
               nisiquiera nos deciamos un hola, sin embargo hice este espacio
               para que recordaramos varios momentos, para asi tener un dulce
-              recuerdo de cada uno :D (pasame imagenes jsjs)
+              recuerdo de cada uno :D (pasame mas imagenes jsjs)
             </p>
             <div className="flower flower-top-right">
               <img src="/flor.png" alt="Flores" />
@@ -224,7 +279,7 @@ export default function Home() {
           </div>
         </div>
         {/* Carrusel de imágenes */}
-        <div className="relative w-full my-10">
+        <div className="relative w-full my-10 z-20">
           <div className="flex justify-center items-center">
             {/* Contenedor de la imagen */}
             <div className="w-full max-w-4xl overflow-hidden flex justify-center">
@@ -255,9 +310,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-center w-full items-center">
-          <div className="card w-full text-center relative">
-            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
+        <div className="flex justify-center w-full items-center ">
+          <div className="card w-full text-center relative z-10 text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
+            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center z-10">
               Se que te gusta la musica asi que te hice una playlist, puse
               canciones que me gustan mucho y queria dedicartelas con todo mi
               cariño :3
@@ -292,7 +347,7 @@ export default function Home() {
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           ></iframe>
-          <div className="card self-center w-full text-center relative">
+          <div className="card self-center w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
             <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
               Esta es especial ❤️
             </p>
@@ -319,7 +374,7 @@ export default function Home() {
         />
 
         <div className="z-10 flex">
-          <div className="card mb-5 w-full text-center relative">
+          <div className="card mb-5 w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
             <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
               Como dije, estamos a pocos dias de finalizar el año, entonces hice
               una mini capsula del tiempo, aqui podemos ir colocando mensajes,
@@ -350,8 +405,20 @@ export default function Home() {
           />
         </div>
       </main>
-      <footer className="text-center mt-10 card text-pastel-purple">
-        <p>Porque tu haces que todo valga la pena, te amoo ❤️</p>
+      <footer className="text-center mt-10 text-pastel-purple">
+        <div className="z-10 flex">
+          <div className="card mb-5 w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
+            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
+              Porque tu haces que todo valga la pena, te amoo ❤️
+            </p>
+            <div className="flower flower-top-right">
+              <img src="/flor.png" alt="Flores" />
+            </div>
+            <div className="flower flower-bottom-left">
+              <img src="/flor.png" alt="Flores" />
+            </div>
+          </div>
+        </div>
       </footer>
 
       <style jsx>{`

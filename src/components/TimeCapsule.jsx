@@ -59,7 +59,7 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
       setMessage(""); // Limpiar el campo de texto
       setError(""); // Limpiar error
     } else {
-      setError("Escribe algo :(.");
+      setError("Escribe algo :D");
     }
   };
 
@@ -74,22 +74,22 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
   }, [timeLeft]);
 
   return (
-    <div className="w-full text-center mt-10">
-      <h2 className="text-2xl font-semibold text-pastel-blue">
+    <div className="w-full text-center mt-10 card bg-card-white-purple dark:bg-card-dark-purple ">
+      <h2 className="text-2xl font-semibold text-pastel-blue text-text-blaack dark:text-text-whitee ">
         Mini cápsula del Tiempo
       </h2>
 
       <div>
-        <p className="text-lg text-pastel-blue mt-4">
+        <p className="text-lg text-text-blaack dark:text-text-whitee mt-4">
           Tiempo restante: {formatTime(timeLeft)}
         </p>
       </div>
 
       {/* Formulario para el mensaje */}
       <div className="mt-8">
-        <h3 className="text-xl text-pastel-blue">Escribe algo :D</h3>
+        <h3 className="text-xl text-text-blaack dark:text-text-whitee">Escribe algo :D</h3>
         <textarea
-          className="mt-4 p-3 w-full text-white card border-2 border-pastel-blue rounded-lg"
+          className="mt-4 p-3 w-full text-text-blaack dark:text-text-whitee card border-2 border-pastel-blue rounded-lg bg-card-white-purple dark:bg-card-dark-purple"
           placeholder="Escribe tu mensaje aquí..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -98,10 +98,10 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
 
         <div className="flex w-full justify-around">
           {/* Select para elegir quién es */}
-          <div className="mt-4">
-            <label className="text-pastel-blue">Soy:</label>
+          <div className="mt-4 ">
+            <label className="text-text-blaack dark:text-text-whitee ">Soy:</label>
             <select
-              className="ml-2 p-2 text-white border-2 card border-pastel-blue rounded-lg"
+              className="ml-2 p-2 text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple border-2 card border-pastel-blue rounded-lg"
               value={sender}
               onChange={(e) => setSender(e.target.value)}
             >
@@ -114,26 +114,26 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
           {/* Botón para enviar mensaje */}
           <div className="mt-4">
             <button
-              className="bg-pastel-purple text-white p-3 rounded-full shadow-lg hover:bg-pastel-pink"
+              className="bg-card-white-purple dark:bg-card-dark-purple text-text-blaack dark:text-text-whitee p-3 rounded-full shadow-lg hover:bg-pastel-pink"
               onClick={handleSubmit}
             >
               Enviar mensaje
             </button>
           </div>
         </div>
-        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        {error && <p className="text-text-blaack dark:text-text-whitee text-sm mt-2">{error}</p>}
       </div>
 
       {/* Mensaje enviado */}
       {submittedMessage && (
         <div className="mt-8 card bg-pastel-pink p-6 rounded-lg shadow-lg">
-          <h3 className="text-xl text-pastel-blue">Mensaje enviado:</h3>
-          <div className="text-lg text-pastel-blue">
+          <h3 className="text-xl text-text-blaack dark:text-text-whitee">Mensaje enviado:</h3>
+          <div className="text-lg text-text-blaack dark:text-text-whitee">
             Puedes mirar tus mensajes dando click aqui:{" "}
             <a
               href={`/mensajesDe${sender}`}
-              className="text-blue-500 hover:text-blue-700"
-            >
+              className="text-blue-700 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-700"
+            > 
               {sender}
             </a>
           </div>

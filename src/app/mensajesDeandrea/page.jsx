@@ -1,11 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function MensajesDeAndrea() {
   const [messages, setMessages] = useState([]);
   const [editingMessage, setEditingMessage] = useState(null);
   const [editedContent, setEditedContent] = useState("");
-
+  const router = useRouter();
   useEffect(() => {
     const fetchMessages = async () => {
       const response = await fetch("/api/andrea/messages");
@@ -62,9 +63,18 @@ export default function MensajesDeAndrea() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-200 via-pink-100 to-purple-200 p-10">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-5xl font-cursive text-pink-600">
-          💌 Mensajes de Andrea
-        </h1>
+        <div className="flex align-middle gap-10">
+          {/* Botón para volver */}
+          <button
+            onClick={() => router.back()} // Llama a router.back() para volver a la página anterior
+            className="bg-gray-400 self-center text-white px-6 rounded-full shadow-lg hover:bg-gray-500"
+          >
+            Volver
+          </button>
+          <h1 className="text-5xl font-cursive self-center text-pink-600">
+            Mensajes de Andrea 💌
+          </h1>
+        </div>
         <p className="mt-4 text-lg text-gray-600 italic">
           Aquí puedes ver tus mensajes. ❤️
         </p>

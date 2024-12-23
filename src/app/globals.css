@@ -2,30 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #fff0f5; /* Soft pink for a romantic ambiance */
-  --foreground: #6a0572; /* Deep romantic purple for text */
-  --accent: #ff69b4; /* Hot pink for accents */
-  --secondary: #fbcfe8; /* Pastel pink for secondary elements */
-  --card-background: #f7c8d3; /* Lighter pink background for cards */
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #2e1534; /* Deep purple for a cozy romantic feel */
-    --foreground: #f3e8ff; /* Light lavender for text */
-    --accent: #d972d1; /* Muted pink for accents */
-    --secondary: #b87fb0; /* Soft mauve for secondary elements */
-    --card-background: #472b4fc9; /* Darker pink for cards in dark mode */
-  }
-}
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Georgia', 'Times New Roman', serif; /* Romantic serif font */
   transition: background 0.3s ease, color 0.3s ease;
-}
+  }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--accent);
@@ -57,7 +41,7 @@ button:hover {
 }
 
 .card {
-  background: var(--card-background);
+
   border: 1px solid var(--accent);
   border-radius: 12px;
   padding: 16px;
