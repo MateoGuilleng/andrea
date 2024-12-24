@@ -6,7 +6,7 @@ import TimeCapsule from "@/components/TimeCapsule";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const targetDate = new Date("2024-12-31T24:00:00");
+  const targetDate = new Date("2024-12-31T24:00:00"); //
   const [currentCarruselIndex, setCurrentCarruselIndex] = useState(0);
   const content = [
     {
@@ -207,26 +207,27 @@ export default function Home() {
             <img src="/flor.png" alt="Flores" />
           </div>
 
-          <p className="text-lg font-semibold text-text-blaack dark:text-text-whitee drop-shadow-md w-full">
-            Un pequeño espacio solo para ti
+          <p className="text-3xl md:text-xl font-semibold text-text-blaack dark:text-text-whitee drop-shadow-md w-full">
+            Un pequeño espacio solo para ti ❣️
           </p>
-          <p className="mt-4 text-sm text-text-blaack dark:text-text-whitee  drop-shadow-md text-center text-wrap">
+          <p className="mt-4 text-base text-text-blaack dark:text-text-whitee drop-shadow-md text-center text-wrap">
             Espero que cuando veas esto estés bien. <br />
-            Hice esto porque te amo muuuucho :3, <br /> y también porque tenía
+            Hice esto porque te amo muuuucho :3, <br />y también porque tenía
             mucho tiempo libre jsjsj.
           </p>
-          <div className="mt-6 flex justify-center flex-col">
-            <span className="bg-pastel-purple/30 px-4 py-2 rounded-full text-text-blaack dark:text-text-whitee text-sm">
+
+          <div className="mt-6 text-xl flex justify-center flex-col">
+            <span className="bg-pastel-purple/30 px-4  py-2 rounded-full text-text-blaack dark:text-text-whitee text-xl">
               Para la razon de mi sonrisa: Andrea Ferro
             </span>
 
-            <span className="bg-pastel-purple/30 px-4 py-2 rounded-full text-text-blaack dark:text-text-whitee font-bold text-sm">
+            <span className="bg-pastel-purple/30 px-4 py-2 rounded-full text-text-blaack dark:text-text-whitee font-bold text-xl">
               💕 Nunca te olvides de ser feliz 💕
             </span>
           </div>
         </div>
 
-        <div className="flex justify-center w-full items-center">
+        <div className="flex flex-wrap sm:flex-nowrap justify-center w-full items-center">
           <div
             className="w-full flex items-center z-10 justify-center"
             onClick={handleNext}
@@ -241,7 +242,7 @@ export default function Home() {
           </div>
 
           <div className="card w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
-            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
+            <p className="text-lg  text-pastel-blue drop-shadow-md text-center self-center">
               {currentContent.text}
             </p>
             <div className="flower flower-top-right">
@@ -255,7 +256,7 @@ export default function Home() {
 
         <div className="z-10 ">
           <div className="card mb-5 w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
-            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
+            <p className="text-lg  text-pastel-blue drop-shadow-md text-center self-center">
               Nos conocemos desde hace mucho, hemos cometido errores, meses que
               nisiquiera nos deciamos un hola, sin embargo hice este espacio
               para que recordaramos varios momentos, para asi tener un dulce
@@ -314,7 +315,7 @@ export default function Home() {
 
         <div className="flex justify-center w-full items-center ">
           <div className="card w-full text-center relative z-10 text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
-            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center z-10">
+            <p className="text-base text-pastel-blue drop-shadow-md text-center self-center z-10">
               Se que te gusta la musica asi que te hice una playlist, puse
               canciones que me gustan mucho y queria dedicartelas con todo mi
               cariño :3
@@ -350,7 +351,7 @@ export default function Home() {
             loading="lazy"
           ></iframe>
           <div className="card self-center w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
-            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
+            <p className="text-xl  text-pastel-blue drop-shadow-md text-center self-center">
               Esta es especial ❤️
             </p>
             <div className="flower flower-top-left">
@@ -374,13 +375,30 @@ export default function Home() {
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         />
+        <div className="card self-center w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
+          <p className="text-lg  text-pastel-blue drop-shadow-md text-center self-center">
+            Si quieres tambien podriamos hacer una playlist entre los dos :3
+          </p>
+          <div className="flower flower-top-left">
+            <img src="/flor.png" alt="Flores" />
+          </div>
 
-        <div className="z-10 flex">
+          <div className="flower flower-bottom-right">
+            <img src="/flor.png" alt="Flores" />
+          </div>
+        </div>
+
+        <div className="z-10 flex flex-wrap sm:flex-nowrap">
           <div className="card mb-5 w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
-            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
-              Como dije, estamos a pocos dias de finalizar el año, entonces hice
-              una mini capsula del tiempo, aqui podemos ir colocando mensajes,
-              solo se podran leer hasta 1 de enero a las 00:00 😉
+            <p className="text-lg  text-pastel-blue drop-shadow-md text-center self-center">
+              Estamos a solo unos días de despedir este año y dar la bienvenida
+              a uno nuevo lleno de posibilidades. Pensando en eso, decidí crear
+              una pequeña cápsula del tiempo, un lugar especial donde podemos
+              guardar cualquier mensaje ❤️. <br />
+              Estos mensajes quedarán sellados, intocables, hasta el primer
+              segundo del año 2025. Entonces serán liberados para que podamos
+              leerlos, recordando lo que sentimos en estos últimos momentos del
+              año. 😉✨
             </p>
             <div className="flower flower-top-right">
               <img src="/flor.png" alt="Flores" />
@@ -410,7 +428,7 @@ export default function Home() {
       <footer className="text-center mt-10 text-pastel-purple">
         <div className="z-10 flex">
           <div className="card mb-5 w-full text-center relative text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple">
-            <p className="text-sm  text-pastel-blue drop-shadow-md text-center self-center">
+            <p className="text-xl  text-pastel-blue drop-shadow-md text-center self-center">
               Porque tu haces que todo valga la pena, te amoo ❤️
             </p>
             <div className="flower flower-top-right">

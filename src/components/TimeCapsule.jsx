@@ -76,7 +76,7 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
   return (
     <div className="w-full text-center mt-10 card bg-card-white-purple dark:bg-card-dark-purple ">
       <h2 className="text-2xl font-semibold text-pastel-blue text-text-blaack dark:text-text-whitee ">
-        Mini cápsula del Tiempo
+        Mini cápsula del Tiempo :3
       </h2>
 
       <div>
@@ -87,7 +87,7 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
 
       {/* Formulario para el mensaje */}
       <div className="mt-8">
-        <h3 className="text-xl text-text-blaack dark:text-text-whitee">Escribe algo :D</h3>
+        <h3 className="text-xl text-text-blaack dark:text-text-whitee">😊</h3>
         <textarea
           className="mt-4 p-3 w-full text-text-blaack dark:text-text-whitee card border-2 border-pastel-blue rounded-lg bg-card-white-purple dark:bg-card-dark-purple"
           placeholder="Escribe tu mensaje aquí..."
@@ -96,10 +96,12 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
           rows={4}
         ></textarea>
 
-        <div className="flex w-full justify-around">
+        <div className="flex flex-wrap w-full justify-around sm:flex-nowrap">
           {/* Select para elegir quién es */}
           <div className="mt-4 ">
-            <label className="text-text-blaack dark:text-text-whitee ">Soy:</label>
+            <label className="text-text-blaack dark:text-text-whitee  ">
+              Soy:
+            </label>
             <select
               className="ml-2 p-2 text-text-blaack dark:text-text-whitee bg-card-white-purple dark:bg-card-dark-purple border-2 card border-pastel-blue rounded-lg"
               value={sender}
@@ -114,26 +116,32 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
           {/* Botón para enviar mensaje */}
           <div className="mt-4">
             <button
-              className="bg-card-white-purple dark:bg-card-dark-purple text-text-blaack dark:text-text-whitee p-3 rounded-full shadow-lg hover:bg-pastel-pink"
+              className="dark:bg-purple-950/45 bg-purple-400/45 text-text-blaack dark:text-text-whitee p-3 rounded-full shadow-lg hover:bg-pastel-pink"
               onClick={handleSubmit}
             >
               Enviar mensaje
             </button>
           </div>
         </div>
-        {error && <p className="text-text-blaack dark:text-text-whitee text-sm mt-2">{error}</p>}
+        {error && (
+          <p className="text-text-blaack dark:text-text-whitee text-sm mt-2">
+            {error}
+          </p>
+        )}
       </div>
 
       {/* Mensaje enviado */}
       {submittedMessage && (
         <div className="mt-8 card bg-pastel-pink p-6 rounded-lg shadow-lg">
-          <h3 className="text-xl text-text-blaack dark:text-text-whitee">Mensaje enviado:</h3>
+          <h3 className="text-xl text-text-blaack dark:text-text-whitee">
+            Mensaje enviado:
+          </h3>
           <div className="text-lg text-text-blaack dark:text-text-whitee">
             Puedes mirar tus mensajes dando click aqui:{" "}
             <a
               href={`/mensajesDe${sender}`}
               className="text-blue-700 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-700"
-            > 
+            >
               {sender}
             </a>
           </div>
@@ -143,18 +151,20 @@ const TimeCapsule = ({ targetDate, onSubmitMessage }) => {
       {/* Mostrar todos los mensajes después de que el contador llegue a 0 */}
       {timeLeft === 0 && (
         <div className="mt-8">
-          <h3 className="text-2xl font-semibold text-pastel-blue">
-            Feliz año nuevo :3 aqui estan todos los mensajes:
+          <h3 className="text-2xl font-semibold text-text-blaack dark:text-text-whitee">
+            Feliz año nuevoooo :3 aqui estan todos los mensajes:
           </h3>
           <div className="mt-4 space-y-4">
             {messages.length > 0 ? (
               messages.map((msg, index) => (
                 <div
                   key={index}
-                  className="bg-pastel-purple card p-4 rounded-lg shadow-md"
+                  className="dark:bg-purple-950/45 bg-purple-400/45 card p-4 rounded-lg shadow-md"
                 >
-                  <p className="text-lg text-white">{msg.message}</p>
-                  <p className="text-sm text-white mt-2">
+                  <p className="text-lg text-text-blaack dark:text-text-whitee">
+                    {msg.message}
+                  </p>
+                  <p className="text-sm text-text-blaack dark:text-text-whitee mt-2">
                     Enviado por:{" "}
                     <span className="font-semibold">{msg.sender}</span> el{" "}
                     <span className="font-semibold">
